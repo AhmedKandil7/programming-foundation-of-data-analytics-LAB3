@@ -1,0 +1,79 @@
+Q1: (a): sum(X) , sum list values
+Q1: (b):sum(X[1::2]), summ odd numbers
+Q1: (c):sum(1 for d in X if d > 0), count no. of posistive numbers
+Q1: (d):any(X[i] > 0 for i in range(len(X))),searches for atleast positive number in list
+
+-----------------------------------------------------
+Q2: 
+
+def sumVal(N):
+if N <= 0:
+return 0
+return N + sumVal(N - 1)
+print(sumVal(4))
+----------------------------------------------------
+Q3: recursive function f(x, y)
+
+OUTPUT1 : 12
+OUTPUT2 : 3
+-----------------------------------------------------
+Q4:
+OUTPUT : 2
+         3
+	   4
+	   10
+MODIFICATION: 
+def reverse_list(a):
+return a[::-1]
+----------------------------------------------------
+Q5: 
+def sum_of_series(N):
+if N == 1:
+return 1
+else:
+return N**2 + sum_of_series(N-1) 
+result = sum_of_series(5)
+print(result)
+----------------------------------------------------
+Q6: 
+def sum_of_list(L):
+if not L: 
+return 0
+else:
+return L[0] + sum_of_list(L[1:])
+result = sum_of_list([2, 3, 5, 7])
+print(result)
+---------------------------------------------------
+Q7: 
+def count_items(L):
+if not L:
+return 0
+else:
+return 1 + count_items(L[1:])
+result = count_items([2, 3, 5, 7])
+print(result)
+--------------------------------------------------
+Q8: 
+def get_max_length():
+    while True:
+        try:
+            max_length = int(input("Enter the maximum length in feet: "))
+            if max_length > 0:
+                return max_length
+            else:
+                print("Error! Please enter a valid positive integer.")
+        except ValueError:
+            print("Error! Please enter a valid positive integer.")
+
+def print_conversion_chart(max_length):
+    conversion_factor = 0.3048
+
+    print("Feet\tMeters")
+    print("-----------------")
+
+    for feet in range(1, max_length + 1):
+        meters = feet * conversion_factor
+        print(f"{feet}\t{meters:.4f}")
+
+max_length = get_max_length()
+print_conversion_chart(max_length)
